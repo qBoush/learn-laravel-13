@@ -39,3 +39,30 @@ RewriteEngine on
 // Правило, которое берёт абсолютно любой запрошенный URL и незаметно для пользователя перенаправляет его в папку public/
 RewriteRule ^(.*)$ public/$1 [L]
 ```
+
+## Установка Laravel из репозитория
+
+
+выполните клонирование репозитория в домашнюю директорию сайтов и установите все зависимости.
+
+```bash
+git clone https://github.com/qBoush/learn-laravel-13.git
+composer install
+```
+Скопируем файл .env из файла **.env.example**
+
+```bash
+copy .env.example .env
+```
+
+Сгенерируем ключ шифрования 
+
+```bash
+php artisan key:generate
+```
+
+Выполните миграцию
+
+```bash
+php artisan migrate --seed
+```
